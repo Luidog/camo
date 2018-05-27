@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "depd": "1.1.0",
-    "lodash": "3.9.3"
+    "lodash": "4.17.5"
   },
   "optionalDependencies": {
     "nedb": "1.8.0",
