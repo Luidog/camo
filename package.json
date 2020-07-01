@@ -49,7 +49,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "lodash": "^4.17.15",
-    "snyk": "^1.336.0"
+    "snyk": "^1.337.0"
   },
   "optionalDependencies": {
     "mongodb": "^3.5.5",
