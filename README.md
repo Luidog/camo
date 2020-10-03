@@ -4,11 +4,11 @@
 
 [![Build Status](https://travis-ci.org/Luidog/fms-api-client.png?branch=master)](https://travis-ci.org/Luidog/marpat) [![Known Vulnerabilities](https://snyk.io/test/github/Luidog/marpat/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Luidog/marpat?targetFile=package.json) [![Coverage Status](https://coveralls.io/repos/github/Luidog/marpat/badge.svg?branch=document-update)](https://coveralls.io/github/Luidog/marpat?branch=document-update) [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Luidog/marpat/blob/master/LICENSE.md)
 
-Marpat is lightweight object modeling tool that uses ES6 classes to model data. This project is a fork of [Camo](https://github.com/scottwrobinson/camo). Marpat is designed to be a storage agnostic document collection backend. By default Marpat can connect to [nedb](<>), [mongodb](<>), and [firebase](<>). Additionally, Marpat provides a [Client Registry](<>) and [DocumentClient](<>) class. The client registry and DocumentClient class can be used to use a custom backend.
+Marpat is lightweight object modeling tool that uses ES6 classes to model data. This project is a fork of [Camo](https://github.com/scottwrobinson/camo). Marpat is designed to be a storage agnostic document collection backend. By default Marpat can connect to [nedb](https://github.com/louischatriot/nedb), [mongodb](https://www.mongodb.com). Additionally, Marpat provides a Client Registry and DocumentClient class. The client registry and DocumentClient class can be used to use a custom backend.
 
 ## Jump To
 
-- <a href="#installation">Installation/a>
+- <a href="#installation">Installation</a>
 - <a href="#quick-start">Quick Start</a>
   - <a href="#connect-to-the-database">Connect to the Database</a>
   - <a href="#creating-a-document">Creating A Model</a>
@@ -38,9 +38,6 @@ And at least ONE of the following:
 
     npm install mongodb --save
 
-    OR
-
-    npm install firebase-admin --save
 
 ## Quick Start
 
@@ -442,11 +439,11 @@ npm test
 
 <!--@execute('npm run test',[])-->
 ```default
-> marpat@3.0.4 test /marpat
+> marpat@3.0.5 test /marpat
 > snyk test && nyc _mocha --recursive ./test --timeout=30000 --exit
 
 
-Testing /marpat...
+Testing /Users/luidelaparra/Documents/Development/marpat...
 
 Organization:      luidog
 Package manager:   npm
@@ -457,7 +454,12 @@ Project path:      /marpat
 Local Snyk policy: found
 Licenses:          enabled
 
-✓ Tested 341 dependencies for known issues, no vulnerable paths found.
+✓ Tested 7 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
 
 
   Base Client
@@ -486,7 +488,7 @@ Licenses:          enabled
 
   Base MongoDB Client
     #save()
-      ✓ should reject if it can not update the object (128ms)
+      ✓ should reject if it can not update the object (147ms)
     #deleteMany()
       ✓ should reject if it can not delete the object
     #delete()
@@ -510,24 +512,24 @@ Licenses:          enabled
 
   MongoDB Client
     #save()
-      ✓ should persist the object and its members to the database (57ms)
+      ✓ should persist the object and its members to the database (55ms)
     #findOne()
-      ✓ should load a single object from the collection (60ms)
-      ✓ should populate all fields (287ms)
-      ✓ should not populate any fields (185ms)
-      ✓ should populate specified fields (267ms)
-      ✓ should select only the specified fields (154ms)
+      ✓ should load a single object from the collection (68ms)
+      ✓ should populate all fields (232ms)
+      ✓ should not populate any fields (153ms)
+      ✓ should populate specified fields (164ms)
+      ✓ should select only the specified fields (180ms)
     #findOneAndUpdate()
       ✓ should return null if there is no document to update (57ms)
-      ✓ should load and update a single object from the collection (63ms)
-      ✓ should populate all fields (245ms)
-      ✓ should not populate any fields (173ms)
-      ✓ should return only the selected information (64ms)
-      ✓ should insert a single object to the collection (164ms)
-      ✓ requires at least two arguments (60ms)
+      ✓ should load and update a single object from the collection (69ms)
+      ✓ should populate all fields (282ms)
+      ✓ should not populate any fields (167ms)
+      ✓ should return only the selected information (56ms)
+      ✓ should insert a single object to the collection (178ms)
+      ✓ requires at least two arguments (59ms)
     #findOneAndDelete()
-      ✓ requires at least one argument (57ms)
-      ✓ should load and delete a single object from the collection (60ms)
+      ✓ requires at least one argument (58ms)
+      ✓ should load and delete a single object from the collection (58ms)
     #find()
       ✓ should load multiple objects from the collection
       ✓ should reject if mongo cursor rejects
@@ -538,37 +540,37 @@ Licenses:          enabled
       ✓ should sort results using multiple keys
       ✓ should limit number of results returned
       ✓ should skip given number of results
-      ✓ should populate all fields (182ms)
-      ✓ should not populate any fields (178ms)
-      ✓ should populate specified fields (174ms)
-      ✓ should select specified fields (167ms)
+      ✓ should populate all fields (149ms)
+      ✓ should not populate any fields (148ms)
+      ✓ should populate specified fields (163ms)
+      ✓ should select specified fields (154ms)
     #count()
-      ✓ should return 0 objects from the collection (61ms)
-      ✓ should disregard unsupported options (60ms)
-      ✓ should return 2 matching objects from the collection (208ms)
+      ✓ should return 0 objects from the collection (95ms)
+      ✓ should disregard unsupported options (57ms)
+      ✓ should return 2 matching objects from the collection (56ms)
     #delete()
-      ✓ should remove instance from the collection (53ms)
+      ✓ should remove instance from the collection (61ms)
       ✓ should return zero if there are no items to remove
     #deleteOne()
-      ✓ should remove the object from the collection (61ms)
+      ✓ should remove the object from the collection (52ms)
       ✓ should return zero if there are no items to remove
     #deleteMany()
-      ✓ should remove multiple objects from the collection (57ms)
-      ✓ should remove all objects when query is not provided (66ms)
+      ✓ should remove multiple objects from the collection (59ms)
+      ✓ should remove all objects when query is not provided (186ms)
     #clearCollection()
-      ✓ should remove all objects from the collection (67ms)
+      ✓ should remove all objects from the collection (54ms)
     id
-      ✓ should allow custom _id values (70ms)
+      ✓ should allow custom _id values (60ms)
     query
-      ✓ should automatically cast string ID in query to ObjectID (55ms)
-      ✓ should automatically cast string ID in query to ObjectID (61ms)
-      ✓ should automatically cast string IDs in '$in' operator to ObjectIDs (61ms)
-      ✓ should automatically cast string IDs in '$nin' operator to ObjectIDs (91ms)
-      ✓ should automatically cast string IDs in '$not' operator to ObjectIDs (85ms)
-      ✓ should automatically cast string IDs in deep query objects (66ms)
+      ✓ should automatically cast string ID in query to ObjectID (56ms)
+      ✓ should automatically cast string ID in query to ObjectID (81ms)
+      ✓ should automatically cast string IDs in '$in' operator to ObjectIDs (57ms)
+      ✓ should automatically cast string IDs in '$nin' operator to ObjectIDs (58ms)
+      ✓ should automatically cast string IDs in '$not' operator to ObjectIDs (56ms)
+      ✓ should automatically cast string IDs in deep query objects (54ms)
     indexes
-      ✓ should reject documents with duplicate values in unique-indexed fields (121ms)
-      ✓ should accept documents with duplicate values in non-unique-indexed fields (117ms)
+      ✓ should reject documents with duplicate values in unique-indexed fields (103ms)
+      ✓ should accept documents with duplicate values in non-unique-indexed fields (69ms)
 
   Base NeDB Client
     #save()
@@ -581,7 +583,7 @@ Licenses:          enabled
     #dropDatabase()
       ✓ should only remove Files if the are already there
     #count()
-      ✓ should reject an invalid count query (95ms)
+      ✓ should reject an invalid count query (82ms)
     #findOneAndDelete()
       ✓ should reject an invalid findOneAndDelete query
       ✓ should return zero if no results are found
@@ -589,7 +591,7 @@ Licenses:          enabled
       ✓ should reject an invalid findOneAndUpdate query
       ✓ should return zero if no results are found
     #clearCollection()
-      ✓ should reject an invalid findOneAndDelete query (40ms)
+      ✓ should reject an invalid findOneAndDelete query
 
   NeDB In Memory Capabilities
     #save()
@@ -639,11 +641,11 @@ Licenses:          enabled
       ✓ should remove all objects from the collection
 
   NeDB File System Capabilities
-    ✓ should create a file based store (46ms)
-    ✓ should return collections as a driver (41ms)
-    ✓ should remove files when used on the File System (40ms)
+    ✓ should create a file based store (42ms)
+    ✓ should return collections as a driver (38ms)
+    ✓ should remove files when used on the File System (42ms)
 removed
-    ✓ should not delete files if there are no collections (47ms)
+    ✓ should not delete files if there are no collections (43ms)
 
   NeDbClient - old
     id
@@ -665,7 +667,7 @@ removed
     Connect to stores
       ✓ should connect to an nedb connection
       ✓ should connect to a mongodb connection
-      ✓ should reject if it can not connect to a mongodb connection (30005ms)
+      ✓ should reject if it can not connect to a mongodb connection (30006ms)
       ✓ should reject an unrecognized connection
 
   Base Document
@@ -824,44 +826,45 @@ removed
       ✓ should support Documents
 
 
-  252 passing (51s)
+  252 passing (50s)
 
------------------------|----------|----------|----------|----------|-------------------|
-File                   |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
------------------------|----------|----------|----------|----------|-------------------|
-All files              |       98 |    96.69 |    99.21 |    99.07 |                   |
- marpat                |      100 |      100 |      100 |      100 |                   |
-  index.js             |      100 |      100 |      100 |      100 |                   |
- marpat/lib            |     98.2 |    97.98 |    99.17 |    98.36 |                   |
-  base-document.js     |    96.68 |    95.78 |      100 |    96.67 |... 00,306,307,314 |
-  db.js                |      100 |      100 |      100 |      100 |                   |
-  document.js          |      100 |      100 |      100 |      100 |                   |
-  embedded-document.js |      100 |      100 |      100 |      100 |                   |
-  errors.js            |      100 |      100 |      100 |      100 |                   |
-  index.js             |      100 |      100 |      100 |      100 |                   |
-  util.js              |      100 |      100 |      100 |      100 |                   |
-  validate.js          |    98.72 |      100 |    94.44 |      100 |                   |
- marpat/lib/clients    |    97.73 |    93.48 |    99.24 |      100 |                   |
-  client.js            |      100 |      100 |      100 |      100 |                   |
-  index.js             |      100 |      100 |      100 |      100 |                   |
-  mongoclient.js       |      100 |      100 |      100 |      100 |                   |
-  nedbclient.js        |       95 |    86.36 |    98.08 |      100 |... 33,245,331,438 |
-  registry.js          |      100 |      100 |      100 |      100 |                   |
------------------------|----------|----------|----------|----------|-------------------|
+-----------------------|---------|----------|---------|---------|----------------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s          
+-----------------------|---------|----------|---------|---------|----------------------------
+All files              |      98 |    96.69 |   99.21 |   99.07 |                            
+ marpat                |     100 |      100 |     100 |     100 |                            
+  index.js             |     100 |      100 |     100 |     100 |                            
+ marpat/lib            |    98.2 |    97.98 |   99.17 |   98.36 |                            
+  base-document.js     |   96.68 |    95.78 |     100 |   96.67 | 291-314                    
+  db.js                |     100 |      100 |     100 |     100 |                            
+  document.js          |     100 |      100 |     100 |     100 |                            
+  embedded-document.js |     100 |      100 |     100 |     100 |                            
+  errors.js            |     100 |      100 |     100 |     100 |                            
+  index.js             |     100 |      100 |     100 |     100 |                            
+  util.js              |     100 |      100 |     100 |     100 |                            
+  validate.js          |   98.72 |      100 |   94.44 |     100 |                            
+ marpat/lib/clients    |   97.73 |    93.48 |   99.24 |     100 |                            
+  client.js            |     100 |      100 |     100 |     100 |                            
+  index.js             |     100 |      100 |     100 |     100 |                            
+  mongoclient.js       |     100 |      100 |     100 |     100 |                            
+  nedbclient.js        |      95 |    86.36 |   98.08 |     100 | 55,130-199,233,245,331,438 
+  registry.js          |     100 |      100 |     100 |     100 |                            
+-----------------------|---------|----------|---------|---------|----------------------------
 ```
 <!--/@-->
 
 <!--@dependencies()-->
-## Dependencies
+## <a name="dependencies">Dependencies</a>
 
 - [@hapi/joi](https://github.com/hapijs/joi): Object schema validation
 - [lodash](https://github.com/lodash/lodash): Lodash modular utilities.
-- [snyk](https://github.com/snyk/snyk): snyk library and cli utility
 - [mongodb](https://github.com/mongodb/node-mongodb-native): The official MongoDB driver for Node.js
 - [nedb](https://github.com/louischatriot/nedb): File-based embedded data store for node.js
+
 <!--/@-->
+
 <!--@devDependencies()-->
-## Development Dependencies
+## <a name="dev-dependencies">Dev Dependencies</a>
 
 - [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [chai-as-promised](https://github.com/domenic/chai-as-promised): Extends Chai with assertions about promises.
@@ -880,6 +883,8 @@ All files              |       98 |    96.69 |    99.21 |    99.07 |            
 - [prettier](https://github.com/prettier/prettier): Prettier is an opinionated code formatter
 - [proxyquire](https://github.com/thlorenz/proxyquire): Proxies nodejs require in order to allow overriding dependencies during testing.
 - [sinon](https://github.com/sinonjs/sinon): JavaScript test spies, stubs and mocks.
+- [snyk](https://github.com/snyk/snyk): snyk library and cli utility
+
 <!--/@-->
 
 <!--@license()-->

@@ -1,6 +1,6 @@
 {
   "name": "marpat",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "A class-based ES6 ODM for Mongo-like databases.",
   "author": {
     "name": "Lui de la Parra",
