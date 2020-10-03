@@ -442,7 +442,7 @@ npm test
 
 <!--@execute('npm run test',[])-->
 ```default
-> marpat@3.0.0 test /marpat
+> marpat@3.0.4 test /marpat
 > snyk test && nyc _mocha --recursive ./test --timeout=30000 --exit
 
 
